@@ -1,64 +1,72 @@
-// Require Modules 
+// Require Modules
 
-const fs = require('fs');
-const inquirer = require('inquirer');
-const jest = require('jest');
+const fs = require("fs");
+const inquirer = require("inquirer");
+const jest = require("jest");
 
-const {Triangle, Circle, Square} = require("./lib/shapes");
+const { Triangle, Circle, Square } = require("./lib/shapes");
 
+//Inquirer function
+// Prompts the user with questions to render the SVG logo
+const promptSVG = () => {
+  return inquirer
+    .prompt([
+      // Text prompt
+      {
+        type: "input",
+        message:
+          "What text would you like your logo to display? (Enter up to three characters)",
+        name: "text",
+        validate: (nameInput) =>
+          nameInput.length <= 3 ? true : "Please enter up to three characters", //Uses a conditional (ternary) operator to determine validation
+      },
+      // Text colour prompt
+      {
+        type: "input",
+        message: "Choose text color (Enter a color or a hexadecimal#)",
+        name: "textColor",
+        validate: (nameInput) =>
+          nameInput ? true : "Please enter a color for the text",
+      },
+      // Shapes choice prompt
+      {
+        type: "list",
+        message: "What shape would you like your logo to be?",
+        choices: ["Triangle", "Circle", "Square"],
+        name: "shape",
+        validate: (nameInput) =>
+          nameInput ? true : "Please select a shape for the logo",
+      },
+      // Shape colour prompt
+      {
+        type: "input",
+        message: "Choose shape color (Enter a color or a hexadecimal#)",
+        name: "shapeColour",
+        validate: (nameInput) =>
+          nameInput ? true : "Please enter a color for the shape",
+      },
+    ])
+    .then((answers) => {
+      // Calling write to file function to generate SVG file
+      generateSVG("logo.svg", answers);
+    });
+};
 
+const generateSVG = (fileName, answers) => {
+  let svgFiles = "";
+  svgFiles =
+    '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
+  svgFiles += `${answers.shape}`;
 
+  // Using FS to generate SVG,
+  fs.writeFile(fileName, svgFiles, (err) => {
+    err ? console.log(err) : console.log("Generated logo.svg");
+  });
+};
 
-//Inquirer function 
- // Prompts the user with questions to render the SVG logo
- const promptSVG = () => {
-    return inquirer
-      .prompt([
-        // Text prompt
-        {
-          type: "input",
-          message:
-            "What text would you like your logo to display? (Enter up to three characters)",
-          name: "text",
-          validate: (nameInput) =>
-            nameInput.length <= 3
-              ? true : "Please enter up to three characters", //Uses a conditional (ternary) operator to determine validation
-        },
-        // Text colour prompt
-        {
-          type: "input",
-          message: "Choose text color (Enter a color or a hexadecimal#)",
-          name: "textColor",
-          validate: (nameInput) =>
-            nameInput ? true : "Please enter a color for the text",
-        },
-        // Shapes choice prompt
-        {
-          type: "list",
-          message: "What shape would you like your logo to be?",
-          choices: ["Triangle", "Circle", "Square"],
-          name: "shape",
-          validate: (nameInput) =>
-            nameInput ? true : "Please select a shape for the logo",
-        },
-        // Shape colour prompt
-        {
-          type: "input",
-          message: "Choose shape color (Enter a color or a hexadecimal#)",
-          name: "shapeColour",
-          validate: (nameInput) =>
-            nameInput ? true : "Please enter a color for the shape",
-        },
-      ])
-      .then((answers) => {
-        // Calling write file function to generate SVG file
-        generateSVG("logo.svg", answers);
-      });
-  };
+//Initilise promptSVG function for user questions
+promptSVG();
 
-//Initilise promptSVG function for user questions 
-  promptSVG();
-  
 //  GIVEN a command-line application that accepts user input
 // WHEN I am prompted for text
 // THEN I can enter up to three characters
