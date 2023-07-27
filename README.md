@@ -1,1 +1,1 @@
-# SVG Generator 
+# SVG Logo Generator 
