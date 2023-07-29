@@ -64,14 +64,15 @@ const generateSVG = (fileName, answers) => {
   let shapeChoice;
   if (answers.shape === "Triangle") {
     shapeChoice = new Triangle();
-    svgFiles +='<polygon points= "0,200 300,200 150,0" fill="${answers.shapeColour}"/>';
+    svgFiles += `<polygon points="0,200 300,200 150,0" fill="${answers.shapeColour}"/>`;
   } else if (answers.shape === "Square") {
     shapeChoice = new Square();
-    svgString += `<rect x="50" y="50" fill="${answers.shapeColour}"/>`;
+    svgFiles += `<rect x="50" y="50" fill="${answers.shapeColour}"/>`;
   } else {
     shapeChoice = new Circle();
-    svgString += `<circle cx="50" cy="50" r="100" fill="${answers.shapeColour}"/>`;
+    svgFiles += `<circle cx="50" cy="50" r="100" fill="${answers.shapeColour}"/>`;
   }
+  
 
   //For the Answer.text
   svgFiles += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
