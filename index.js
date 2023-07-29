@@ -56,10 +56,10 @@ const generateSVG = (fileName, answers) => {
   let svgFiles = "";
   svgFiles =
     '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
-  svgFiles += "<g>"; //optional grouping element 
+  svgFiles += "<g>"; //optional grouping element
   svgFiles += `${answers.shape}`;
 
-  //For the Answer.Shape choice + colour choice 
+  //For the Answer.Shape choice + colour choice
 
   let shapeChoice;
   if (answers.shape === "Triangle") {
@@ -67,16 +67,15 @@ const generateSVG = (fileName, answers) => {
     svgFiles += `<polygon points="0,200 300,200 150,0" fill="${answers.shapeColour}"/>`;
   } else if (answers.shape === "Square") {
     shapeChoice = new Square();
-    svgFiles += `<rect x="50" y="50" fill="${answers.shapeColour}"/>`;
+    svgFiles += `<rect x="50" y="50" width="200" height="200" fill="${answers.shapeColour}"/>`;
+
   } else {
     shapeChoice = new Circle();
-    svgFiles += `<circle cx="50" cy="50" r="100" fill="${answers.shapeColour}"/>`;
+    svgFiles += `<circle cx="150" cy="115" r="80" fill="${answers.shapeColour}"/>`;
   }
-  
 
   //For the Answer.text
   svgFiles += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
-  // Closing </g> tag
   svgFiles += "</g>";
   // Closing </svg> tag
   svgFiles += "</svg>";
