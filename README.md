@@ -44,7 +44,7 @@ Users can run this application by
 
 ## Screenshot
 
-![Logo GIF](assets/SVG%20Logo.gifSVG Logo.gif)
+![Logo GIF](assets/SVG%20Logo.gif)
 
 ## Video Link
 https://drive.google.com/file/d/1XgehELMxbuTiA3U1SY6BoNcDUkyElOAl/view 
