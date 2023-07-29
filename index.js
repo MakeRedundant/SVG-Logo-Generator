@@ -56,14 +56,14 @@ const generateSVG = (fileName, answers) => {
   let svgFiles = "";
   svgFiles =
     '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">';
-  svgFiles += "<g>";
+  svgFiles += "<g>"; //optional grouping element 
   svgFiles += `${answers.shape}`;
 
   //For the Answer.Shape choice + colour choice 
 
   let shapeChoice;
   if (answers.shape === "Triangle") {
-    shapeChoice = new Triangle();
+    shapeChoice = new Triangle(); //used the new keyword to create instances of objects based on a constructor class
     svgFiles += `<polygon points="0,200 300,200 150,0" fill="${answers.shapeColour}"/>`;
   } else if (answers.shape === "Square") {
     shapeChoice = new Square();
