@@ -4,12 +4,12 @@
 ![Inquirer Version](https://img.shields.io/badge/Inquirer-8.2.4-blue.svg)
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-100%25-yellow.svg)
 ![File System](https://img.shields.io/badge/File%20System-Implemented-green.svg)
-![Jest Latest Version](https://img.shields.io/npm/v/jest/latest-red.svg)
+![Jest Latest Version](https://img.shields.io/npm/v/jest/latest)
 
 ## Description
 
 This project was created to build simple logos without requiring a graphic designer or
-experience with graphic tools and design. This project utilises the inquirer library to prompt users and file system to generate SVG 300x200 pixel files.
+experience with graphic tools and design. This project utilises the inquirer library to prompt users and file system to generate SVG files of 300x200 pixel.
 
 ## Table of Contents
 
@@ -44,8 +44,10 @@ Users can run this application by
 
 ## Screenshot
 
-![Logo GIF] (./assets/gif/your Gif here)
+![Logo GIF] (./assets/SVG Logo.gif)
 
+## Video Link
+https://drive.google.com/file/d/1XgehELMxbuTiA3U1SY6BoNcDUkyElOAl/view 
 ## License
 
 This project is licensed under MIT
