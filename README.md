@@ -4,7 +4,7 @@
 ![Inquirer Version](https://img.shields.io/badge/Inquirer-8.2.4-blue.svg)
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-100%25-yellow.svg)
 ![File System](https://img.shields.io/badge/File%20System-Implemented-green.svg)
-![Jest Latest Version](https://img.shields.io/npm/v/jest/latest)
+![Jest Latest Version](https://img.shields.io/npm/v/jest/latest?label=Jest&color=red)
 
 ## Description
 
@@ -44,7 +44,7 @@ Users can run this application by
 
 ## Screenshot
 
-![Logo GIF] (./assets/SVG Logo.gif)
+![Logo GIF] (assets/SVG Logo.gif)
 
 ## Video Link
 https://drive.google.com/file/d/1XgehELMxbuTiA3U1SY6BoNcDUkyElOAl/view 
